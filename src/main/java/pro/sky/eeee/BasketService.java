@@ -1,9 +1,22 @@
 package pro.sky.eeee;
 
-public class BasketService {
-    private final BasketService service;
+import org.springframework.stereotype.Service;
 
-    public BasketService(BasketService service) {
-        this.service = service;
+import java.util.List;
+
+@Service
+public class BasketService {
+    private final Basket basket;
+
+    public BasketService(Basket basket) {
+        this.basket = basket;
+    }
+
+    public void add(Integer[] ids) {
+        basket.add(ids);
+    }
+
+    public List<Integer> all() {
+        return basket.getAll();
     }
 }
